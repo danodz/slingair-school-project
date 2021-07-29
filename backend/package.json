@@ -1,0 +1,19 @@
+{
+  "name": "node-project-slignair",
+  "version": "1.0.0",
+  "description": "This is the backend app for Slingair",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev:backend": "nodemon server.js"
+  },
+  "author": "Scott Morin <scott@journeyedu.co>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
+    "uuid": "^8.3.1"
+  }
+}
