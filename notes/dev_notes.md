@@ -12,10 +12,9 @@
 Different FE pages that need to be created or have already been created.
 
 1. `/` - Where users select their seats from a ui and enter their info.
-1. `/confirmed` - Upon successful submission, the user is sent to this page.
-1. `/view-reservation` - Where users can view their reservation. _They didn't even provide me with a proper design. They want me to design it! It is pretty much the same data as the confirmed page._
-1. `/profile` Where users can view/edit their personal information and/or delete a reservation.
-1. `/admin` - _There is now some talk of adding an admin page that would allow the chief to see all of the reservations for a selected flight._ **stretch goal!**
+2. `/confirmed` - Upon successful submission, the user is sent to this page.
+3. `/reservation` - Where users can view their reservation. _They didn't even provide me with a proper design. They want me to design it! It is pretty much the same data as the confirmation page!_
+4. `/admin` - _There is now some talk of adding an admin page that would allow the chief to see all of the reservations for a selected flight._ **This is stretch goal!**
 
 **WTF?!** This is not what I signed up for.
 
@@ -25,17 +24,17 @@ I have also been tasked with developing the Node server that will connect with t
 
 This middleware should have all the requisite endpoints and accept requests from the FE.
 
-I have already created some placeholder functions in `handlers.js`. I am sorry that I can't provide much more than that.
+I have already created some placeholder endpoints in `server.js` and placeholder functions in `handlers.js`. I am sorry that I can't provide much more than that.
 
 ## Communicate with a database server
 
-There is a distinct possibility that I will have to create a mongo database and connect our server to it. They're having trouble finding developer!!
+There is a distinct possibility that I will have to create a mongo database and connect our server to it. They're having trouble finding developers!!
 
 ---
 
 ## I Quit
 
-If you're my replacement, please consider getting the hell out of Dodge ASAP. I get that you probably can't. I wouldn't be surprised if they locked you in before showing you all of the project details... Before totally losing it, I had the time to create some of the FE pages, but there is no functionality yet. I didn't even have a chance to really start on the Backend.
+If you're my replacement, please consider getting the hell out of Dodge ASAP. I get that you probably can't. I wouldn't be surprised if they locked you in before showing you all of the project details... Before totally losing it, I had the time to create some of the FE pages, but there is no functionality yet. I didn't even have a chance to really start on the backend.
 
 And this is where I would recommend you start.
 

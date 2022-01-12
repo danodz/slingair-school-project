@@ -10,7 +10,7 @@ const getFlights = (req, res) => {};
 
 const getFlight = (req, res) => {};
 
-const addReservations = (req, res) => {};
+const addReservation = (req, res) => {};
 
 const getReservations = (req, res) => {};
 
@@ -21,11 +21,11 @@ const deleteReservation = (req, res) => {};
 const updateReservation = (req, res) => {};
 
 module.exports = {
-  getFlights,
-  getFlight,
-  getReservations,
-  addReservations,
-  getSingleReservation,
-  deleteReservation,
-  updateReservation,
+    getFlights,
+    getFlight,
+    getReservations,
+    addReservation,
+    getSingleReservation,
+    deleteReservation,
+    updateReservation,
 };
