@@ -10,10 +10,9 @@ const Header = () => (
       <h1>Sling Airlines</h1>
     </Logo>
     <Nav>
-      {/* TODO: only show links if the user has a reservation already */}
+      {/* TODO: only show link if the user has a reservation already */}
       <>
         <StyledNavLink to="/view-reservation">Reservation</StyledNavLink>
-        <StyledNavLink to="/profile">Profile</StyledNavLink>
       </>
     </Nav>
   </Wrapper>

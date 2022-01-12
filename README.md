@@ -14,7 +14,7 @@ When you asked if it was possible to speak to the dev that worked on the project
 
 Looks like you're on your own...
 
-![mvp gif](frontend/src/assets/screenshots/slingair_mvp.gif)
+![mvp gif](frontend/src/assets/screenshots/slingair-mvp.gif)
 
 ---
 
@@ -69,19 +69,19 @@ In order for your project to be considered `DONE` (passing grade), you should ha
 
 1. Server endpoints are RESTful.
 2. There are endpoints for the following actions:
-   - retrieve all flight numbers
-   - retrieve single flight data (seating)
-   - retrieve all reservations
-   - retrieve a single reservation
-   - create a reservation
-   - delete a reservation _This is a requirement, even though the FE of this is a stretch goal._
-   - update a reservation _This is a requirement, even though the FE of this is a stretch goal._
-3. server should respond in a _complete_ fashion.
+   - Retrieve all flight numbers. **_Having Multiple flights is a stretch goal, but the code should still behave as though there is more than one flight._**
+   - Retrieve single flight data (seating).
+   - Retrieve all reservations. **_This is a requirement, even though the FE of this is a stretch goal._**
+   - Retrieve a single reservation.
+   - Create a reservation.
+   - Delete a reservation. **_This is a requirement, even though the FE of this is a stretch goal._**
+   - Update a reservation. **_This is a requirement, even though the FE of this is a stretch goal._**
+3. Server should respond in a _complete_ fashion:
    - Send the status and the json separately.
-   - send the status in the json object as well.
-   - when a request succeeds respond with requested `data`.
-   - when a request fails, respond with the `data` that was sent to the server. _This makes it easier for FE developers to debug their code._
-   - when a request does not need any data to be returned, provide a message explaining the status: i.e. "reservation deleted."
+   - Send the status in the json object as well.
+   - When a request succeeds respond with `the requested data`.
+   - When a request fails, respond with `the data that was sent to the server`. _This makes it easier for FE developers to debug their code._
+   - When a request does not need any data to be returned, provide a message explaining the status: i.e. "reservation deleted."
 
 ```js
 res.status(200).json({ status: 200, data: {}, message: {} });
@@ -89,13 +89,14 @@ res.status(200).json({ status: 200, data: {}, message: {} });
 
 ### Frontend
 
-1. user can select a flight from a dropdown. _Current implementation of an input field is not ideal._
-2. user can select an available seat.
-3. user can enter their personal information.
-4. user can view the flight confirmation page.
-5. given a reservation `id`, user should be able to view her reservation.
-
-_Note that mutated test data will be preserved as long as your server is running. It stays in memory. The changes will only be reset when the server is restarted._
+1. User can select a flight from a dropdown. _Current implementation of an input field is not ideal._
+2. User can select an available seat.
+3. User can enter their personal information.
+4. User can view the flight confirmation page.
+5. Given a reservation `id`, user should be able to view their reservation at `/reservation`.
+6. The reservation button should only appear once a reservation has been made and should only show the last reservation booked.
+    - Showing multiple reservations is a stretch goal.
+7. The reservation page should fetch the details of the reservation from the backend based on it's unique ID.
 
 ### Database Integration: MongoDB
 
@@ -105,6 +106,7 @@ In order to incorporate the Database, you will need to modify your backend as it
 
 ### Stretch
 
-- Create an interface for users to modify their personal information and/or cancel their reservation at `/profile`.
+- Create an interface for users to update and/or cancel their reservation at `/reservation`.
 - Create an admin interface at `/admin` to view all of the reservation. (The design is up to you.)
+- Multiple flights with randomized reserved seats.
 - Any other improvements that you would like to make! Go wild!
