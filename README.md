@@ -89,7 +89,7 @@ res.status(200).json({ status: 200, data: {}, message: {} });
 
 ### Frontend
 
-1. User can select a flight from a dropdown. _Current implementation of an input field is not ideal._
+1. User can select a flight from a dropdown.
 2. User can select an available seat.
 3. User can enter their personal information.
 4. User can view the flight confirmation page.
