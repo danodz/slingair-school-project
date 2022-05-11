@@ -87,6 +87,8 @@ In order for your project to be considered `DONE` (passing grade), you should ha
 res.status(200).json({ status: 200, data: {}, message: {} });
 ```
 
+> **NOTE: When creating, updating, or deleting a reservation, the affected seats on the plane should be modified as well!**
+
 ### Frontend
 
 1. User can select a flight from a dropdown.
@@ -103,6 +105,15 @@ res.status(200).json({ status: 200, data: {}, message: {} });
 Migrate the data in `backend/data.js` to a brand-new MongoDB database.
 
 In order to incorporate the Database, you will need to modify your backend as it will no longer modify the data in memory, but will use the database to complete all of the requests it receives from the frontend.
+
+**_Recommended structure_:** (for flights collection)
+
+```js
+{
+    flight: "SA231"
+    seats: [{...}, {...}, {...}, ...]
+}
+```
 
 ### Stretch
 
