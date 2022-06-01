@@ -29,15 +29,15 @@ express()
     // ---------------------------------
     
     .get("/api/get-flights", getFlights)
-    .get("/api/get-flight", getFlight)
+    .get("/api/get-flight/:flight", getFlight)
     .get("/api/get-reservations", getReservations)
-    .get("/api/get-reservation", getSingleReservation)
+    .get("/api/get-reservation/:reservation", getSingleReservation)
 
     .post("/api/add-reservation", addReservation)
 
     .patch("/api/update-reservation", updateReservation)
 
-    .delete("/api/delete-reservation", deleteReservation)
+    .delete("/api/delete-reservation/:reservation", deleteReservation)
 
     // ---------------------------------
     // Nothing to modify below this line
