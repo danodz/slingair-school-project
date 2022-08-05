@@ -1,35 +1,36 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const Plane = ({}) => {
-  const [seating, setSeating] = useState([]);
+const Plane = ({setSelectedSeat, selectedFlight}) => {
 
-  useEffect(() => {
-    // TODO: get seating data for selected flight
-  }, []);
+    const [seating, setSeating] = useState([]);
 
-  return (
-    <Wrapper>
-      {seating && seating.length > 0 ? (
-        seating.map((seat) => (
-          <SeatWrapper key={`seat-${seat.id}`}>
-            <label>
-              {seat.isAvailable ? (
-                <>
-                  <Seat type="radio" name="seat" onChange={() => {}} />
-                  <Available>{seat.id}</Available>
-                </>
-              ) : (
-                <Unavailable>{seat.id}</Unavailable>
-              )}
-            </label>
-          </SeatWrapper>
-        ))
-      ) : (
-        <Placeholder>Select a Flight to view seating.</Placeholder>
-      )}
-    </Wrapper>
-  );
+    useEffect(() => {
+        // TODO: GET seating data for selected flight
+    }, [selectedFlight]);
+
+    return (
+        <Wrapper>
+            {seating && seating.length > 0 ? (
+                seating.map((seat) => (
+                    <SeatWrapper key={`seat-${seat.id}`}>
+                        <label>
+                            {seat.isAvailable ? (
+                                <>
+                                    <Seat type="radio" name="seat" onChange={() => {setSelectedSeat(seat.id)}} />
+                                    <Available>{seat.id}</Available>
+                                </>
+                            ) : (
+                                <Unavailable>{seat.id}</Unavailable>
+                            )}
+                        </label>
+                    </SeatWrapper>
+                ))
+            ) : (
+                <Placeholder>Select a Flight to view seating.</Placeholder>
+            )}
+        </Wrapper>
+    );
 };
 
 const Placeholder = styled.div`
@@ -53,7 +54,7 @@ const Wrapper = styled.ol`
   background: #fff;
   border-right: 15px solid var(--color-alabama-crimson);
   border-left: 15px solid var(--color-alabama-crimson);
-  margin: 24px 24px 0 0;
+  margin: 25px 25px 0 0;
   padding: 48px 5px;
   height: 500px;
   width: 300px;
@@ -74,12 +75,10 @@ const Seat = styled.input`
   width: 30px;
   margin: 0;
 
-  &:checked {
-    span {
-      background: var(--color-alabama-crimson);
-      color: #fff;
-      font-weight: 700;
-    }
+  &:checked + span {
+    background: var(--color-alabama-crimson);
+    color: #fff;
+    font-weight: 700;
   }
 `;
 const SeatNumber = styled.span`

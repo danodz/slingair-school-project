@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
-import logoImg from "../assets/air-sling.png";
+import slingImg from "../assets/air-sling.png";
 
 const Footer = () => (
-  <Wrapper>
-    <Logo src={logoImg} />
-    <Text>The only way to fly!</Text>
-  </Wrapper>
+    <Wrapper>
+        <Logo src={slingImg} />
+        <Text>The only way to fly!</Text>
+    </Wrapper>
 );
 
 const Wrapper = styled.div`
   display: flex;
-  margin: auto auto 24px;
+  margin: 0px auto;
   height: 60px;
 `;
 const Logo = styled.img`
