@@ -5,18 +5,20 @@
 - Implemented in React.Js
 - Render the seats based on the data, as provided by the BE.
   - If a seat is marked as `isAvailable: false`, it shouldn't be selectable.
-  - I have the the barebones of this setup already. Just need to connect it to the backend and hope it doesn't break!
+  - I have this setup already. Just need to connect it to the backend and hope it doesn't break!
 
 ### Web Pages
 
 Different FE pages that need to be created or have already been created.
 
 1. `/` - Where users select their seats from a ui and enter their info.
-2. `/confirmed` - Upon successful submission, the user is sent to this page.
+2. `/confirmation` - Upon successful submission, the user is sent to this page.
 3. `/reservation` - Where users can view their reservation. _They didn't even provide me with a proper design. They want me to design it! It is pretty much the same data as the confirmation page!_
-4. `/admin` - _There is now some talk of adding an admin page that would allow the chief to see all of the reservations for a selected flight._ **This is stretch goal!**
+4. `/admin` - _There is now some talk of adding an admin page that would allow the chief to see all of the reservations for a selected flight._ **(This is stretch goal!)**
 
-**WTF?!** This is not what I signed up for.
+This is not what I signed up for!
+
+---
 
 ## Backend (Middleware) Development
 
