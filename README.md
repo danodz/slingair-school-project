@@ -133,7 +133,7 @@ In order to incorporate the Database, you will need to setup your backend as it 
 
 ```js
 {
-    flight: "SA231"
+    flight: "SA231",
     seats: [{...}, {...}, {...}, ...]
 }
 ```
