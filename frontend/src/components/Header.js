@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
 import slingairLogo from "../assets/logo_text.png";
 
 const Header = ({ handleChange }) => {
 
     const [flightNumbers, setFlightNumbers] = useState([]);
+    const location = useLocation();
 
-    useEffect(() => {
-        // TODO: GET all flight numbers
+    useEffect( async () => {
+        const res = await fetch("/api/get-flights")
+        const data = await res.json();
+        setFlightNumbers(data.data.map((flight)=>flight._id))
     }, []);
+
 
     return (
         <Wrapper>
@@ -18,18 +22,22 @@ const Header = ({ handleChange }) => {
                 <Link to="/">
                     <Logo src={slingairLogo} alt="Slingshot Airlines Logo" />
                 </Link>
-                <label>
+                {location.pathname === "/"?<label>
                     Flight Number:
                     <Select onChange={handleChange}>
                         <option value="">Select a flight...</option>
-                        {/* TODO: option for each flight number */}
+                        {flightNumbers.map((flight)=>{
+                            return <option key={flight} value={flight}>{flight}</option>
+                        })}
                     </Select>
-                </label>
+                </label>:<></>}
             </Container>
             <Nav>
                 <>
-                    {/* TODO: only show link if the user has a reservation already */}
-                    <StyledNavLink to="/view-reservation">Reservation</StyledNavLink>
+                    {localStorage.reservationId?
+                        <StyledNavLink to="/reservation">Reservation</StyledNavLink>
+                        :<></>
+                    }
                 </>
             </Nav>
         </Wrapper>

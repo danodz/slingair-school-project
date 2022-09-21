@@ -3,14 +3,31 @@ import styled from "styled-components";
 
 import Plane from "./Plane";
 import Form from "./Form";
+import { useNavigate } from "react-router-dom";
 
 const SeatSelect = ({selectedFlight}) => {
-
+    const navigate = useNavigate();
     const [selectedSeat, setSelectedSeat] = useState("");
 
-    const handleSubmit = (e, formData) => {
+    const handleSubmit = async (e, formData) => {
         e.preventDefault();
-        // TODO: POST info to server
+
+        const response = await fetch("/api/add-reservation", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                givenName: formData.firstName,
+                surname: formData.lastName,
+                email: formData.email,
+                flight: selectedFlight,
+                seat: selectedSeat
+            })
+        })
+        const data = await response.json();
+        localStorage.reservationId = data.data._id;
+        navigate("/confirmation")
     }
 
     return (

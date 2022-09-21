@@ -1,15 +1,9 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-
-import tombstone from "../assets/tombstone.png";
+import FlightDetails from "./FlightDetails";
 
 const Reservation = () => {
-    return (
-        <Wrapper>Reservation page</Wrapper>
-        // TODO: Display the latest reservation information
-        // STRETCH: add FE components to fetch/update/delete reservations
-    )
+    return <FlightDetails titleText="Reservation page"/>
 };
-
-const Wrapper = styled.div``;
 
 export default Reservation;

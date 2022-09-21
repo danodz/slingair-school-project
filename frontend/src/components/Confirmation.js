@@ -1,14 +1,11 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import tombstone from "../assets/tombstone.png";
+import FlightDetails from "./FlightDetails";
 
 const Confirmation = () => {
-    return (
-        <Wrapper>Confirmation page</Wrapper>
-        // TODO: Display the POSTed reservation information
-    )
+    return <FlightDetails titleText="Your flight is confirmed"/>
 };
-
-const Wrapper = styled.div``;
-
 export default Confirmation;
