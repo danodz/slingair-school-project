@@ -11,11 +11,11 @@ const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 };
-// creates a new client
-const client = new MongoClient(MONGO_URI, options);
 
 const callDb = async (fn)=>{
     try{
+        // creates a new client
+        const client = new MongoClient(MONGO_URI, options);
         await client.connect();
 
         // connect to the database (db name is provided as an argument to the function)
@@ -102,6 +102,11 @@ const addReservation = async (req, res) => {
     reservation._id = uuidv4();
 
     const result = await callDb(async (db)=>{
+        const flight = await db.collection("flights").findOne({_id:reservation.flight});
+        const seat = flight.seats.find((seat)=>seat.id===reservation.seat)
+        if(!seat.isAvailable)
+            return null
+
         await setSeatAvailability(db, reservation.flight,reservation.seat, false);
         return await db.collection("reservations").insertOne(reservation);
     });
@@ -117,6 +122,11 @@ const updateReservation = async (req, res) => {
     const _id = newReservation._id;
 
     const result = await callDb(async (db)=>{
+        const flight = await db.collection("flights").findOne({_id:newReservation.flight});
+        const seat = flight.seats.find((seat)=>seat.id===newReservation.seat)
+        if(!seat.isAvailable)
+            return null
+
         const oldReservation = await db.collection("reservations").findOne({_id});
         await setSeatAvailability(db, oldReservation.flight, oldReservation.seat, true)
         await setSeatAvailability(db, newReservation.flight, newReservation.seat, false)
