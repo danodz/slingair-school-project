@@ -1,3 +1,12 @@
+# Context
+
+Full stack project made for concordia's Diploma in Full-Stack Web Development.
+After all the theoretical courses were done, we were assigned this 3 days project. 
+
+Below is the original readme with the project's requirements:
+
+---
+
 # Node.JS Project: SlingAir!
 
 <img src='frontend/src/assets/screenshots/header.png' style='width:100%' />
