@@ -10,8 +10,10 @@
   "author": "Scott Morin <scott@journeyedu.co>",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "moment": "^2.24.0",
+    "mongodb": "^5.1.0",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
     "uuid": "^8.3.1"

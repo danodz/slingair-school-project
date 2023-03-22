@@ -13,7 +13,7 @@
         "react-error-overlay": "6.0.9"
     },
     "scripts": {
-        "dev:frontend": "react-scripts start",
+        "dev:frontend": "react-scripts --openssl-legacy-provider start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
